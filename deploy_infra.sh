@@ -10,6 +10,8 @@ AWS_ACCOUNT_ID=`aws sts get-caller-identity --profile awsbootstrap \
   --query "Account" --output text`
 CODEPIPELINE_BUCKET="$STACK_NAME-$REGION-codepipeline-$AWS_ACCOUNT_ID" 
 
+echo $CODEPIPELINE_BUCKET
+
 # Generate a personal access token with repo and admin:repo_hook
 #    permissions from https://github.com/settings/tokens
 GH_ACCESS_TOKEN=$(cat ~/.github/aws-exercises-access-token)
